@@ -23,7 +23,7 @@
           cm
         </p>
         <div id="slider-range-max3"></div>
-        
+
         <div>
         <label for="select_1">Sorte:</label>
             <select class="form-control" id="select_1" name="sorte">
