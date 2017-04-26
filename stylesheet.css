@@ -1,0 +1,46 @@
+html{
+    background-color: lightgrey;
+}
+
+h3{
+    text-align: center;
+    
+}
+
+.container{
+    background-color: lightblue;
+}
+
+.paypalform{
+    margin-top: 10px;
+}
+
+#amount1, #amount2, #amount3, #menge{
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    border:0;
+    font-weight:bold;
+}
+
+#slider-range-max1, #slider-range-max2, #slider-range-max3{
+    width: 300px;
+    height: 9px;
+    margin: -5px 0 8px 0;
+}
+
+
+#select_1{
+    width: 150px;
+}
+
+.btn {
+    margin: 10px 10px 0 0;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
