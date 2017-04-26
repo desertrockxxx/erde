@@ -23,8 +23,21 @@
       </div>
     </div>
   </div>
-  
 </div>
+
+<?php
+// Auswahl Variablen
+$auswahl_dimension = $_GET['auswahl_dimension'];
+$auswahl_menge = $_GET['auswahl_menge'];
+
+
+if(isset($auswahl_dimension)){
+    require_once("dimension.php");
+}
+if(isset($auswahl_menge)){
+    require_once("menge.php");
+}
+?>
 
 <?php require_once("footer.php")?>
 

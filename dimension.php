@@ -44,6 +44,18 @@
   </div>
   
 <?php
+
+// Mengevariablen
+$amount1 = $_GET['amount1'];
+$amount2 = $_GET['amount2'];
+$amount3 = $_GET['amount3'];
+
+$sorte = $_GET['sorte'];
+
+$fehler= "";
+$dimensionError = "Bitte alle Felder ausfüllen!";
+
+
 //Dimension berechnen
 $sum = "";
 if(!empty($amount1) && isset($amount1)
@@ -62,6 +74,6 @@ if(!empty($amount1) && isset($amount1)
 
    <?php require_once("ausgabe.php") ;?>
 </div>
-  
+ 
 
 <?php require_once("footer.php")?>

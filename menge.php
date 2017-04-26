@@ -28,6 +28,12 @@
   </div>
   
 <?php
+$sorte = $_GET['sorte'];
+$menge = $_GET['menge'];
+
+$fehler= "";
+$mengeError = "Bitte Menge angeben!";
+
 //Prüfe, ob menge 0 ist oder nicht gesetzt
 if(isset($menge) && $menge != 0){
     $fehler = "";
