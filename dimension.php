@@ -42,9 +42,46 @@
     </form>
     </div>
   </div>
-  
+  <div class="row">
+      <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+        <input name="zahl1" type="range" min="0" max="100" value="0" step="1" 
+            onchange="showValue1(this.value); rechnung()" />
+        <span id="range1">0</span>
+        <script type="text/javascript">
+            function showValue1(newValue1)
+            {
+            	document.getElementById("range1").innerHTML=newValue1;
+            }
+        </script>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+        <input name="zahl2" type="range" min="0" max="100" value="0" step="1" 
+            onchange="showValue2(this.value); rechnung()" />
+        <span id="range2">0</span>
+        <script type="text/javascript">
+            function showValue2(newValue2)
+            {
+            	document.getElementById("range2").innerHTML=newValue2;
+            }
+        </script>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+        <input name="zahl3" type="range" min="0" max="100" value="0" step="1" 
+            onchange="showValue3(this.value); rechnung()" />
+        <span id="range3">0</span>
+        <script type="text/javascript">
+            function showValue3(newValue3)
+            {
+            	document.getElementById("range3").innerHTML=newValue3;
+            }
+        </script>
+      </div>
+  </div>
 <?php
-
 // Mengevariablen
 $amount1 = $_GET['amount1'];
 $amount2 = $_GET['amount2'];
@@ -64,7 +101,6 @@ if(!empty($amount1) && isset($amount1)
     && isset($sorte))
     {
         $sum = $amount1 * $amount2 * $amount3;
-        $ergebnis = $sum . " l";
         require_once("paypal.php");
 } else {
     $fehler = $dimensionError;
@@ -75,5 +111,27 @@ if(!empty($amount1) && isset($amount1)
    <?php require_once("ausgabe.php") ;?>
 </div>
  
+ 
+<script>
+    function rechnung() {
+        x = document.getElementById("range1").innerHTML;
+        y = document.getElementById("range2").innerHTML;
+        z = document.getElementById("range3").innerHTML;
+        sum = parseInt(x) + parseInt(y) + parseInt(z);
+        document.getElementById("demo").value = sum;
+    }
+</script>
+
+
+
+<!--Warenkorb-->
+<div class="row">
+    <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+        <h3>Warenkorb</h3>
+        <label for="demo">Menge (in l): </label>
+        <input type="text" id="demo"/>
+    </div>
+</div>
+
 
 <?php require_once("footer.php")?>
