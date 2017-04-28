@@ -1,4 +1,4 @@
-<?php require_once("header.php")?>
+<?php require_once("header.php");?>
 
 <div class="container">
   <div class="row">
@@ -26,7 +26,8 @@
 
         <div>
         <label for="select_1">Sorte:</label>
-            <select class="form-control" id="select_1" name="sorte">
+            <select class="form-control" id="select_1" name="sorte"
+                onchange="waehleSorte(this.value);">
                 <option value="Gurke">Gurke</option>
                 <option value="Tomate">Tomate</option>
                 <option value="Aubergine">Aubergine</option>
@@ -42,11 +43,12 @@
     </form>
     </div>
   </div>
+  
   <div class="row">
       <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
-        <input name="zahl1" type="range" min="0" max="100" value="0" step="1" 
+        <input name="zahl1" type="range" min="1" max="100" value="1" step="1" 
             onchange="showValue1(this.value); rechnung()" />
-        <span id="range1">0</span>
+        <span id="range1">1</span>
         <script type="text/javascript">
             function showValue1(newValue1)
             {
@@ -55,11 +57,12 @@
         </script>
       </div>
   </div>
+  
   <div class="row">
       <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
-        <input name="zahl2" type="range" min="0" max="100" value="0" step="1" 
+        <input name="zahl2" type="range" min="1" max="100" value="1" step="1" 
             onchange="showValue2(this.value); rechnung()" />
-        <span id="range2">0</span>
+        <span id="range2">1</span>
         <script type="text/javascript">
             function showValue2(newValue2)
             {
@@ -68,11 +71,12 @@
         </script>
       </div>
   </div>
+  
   <div class="row">
       <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
-        <input name="zahl3" type="range" min="0" max="100" value="0" step="1" 
+        <input name="zahl3" type="range" min="1" max="100" value="1" step="1" 
             onchange="showValue3(this.value); rechnung()" />
-        <span id="range3">0</span>
+        <span id="range3">1</span>
         <script type="text/javascript">
             function showValue3(newValue3)
             {
@@ -117,21 +121,17 @@ if(!empty($amount1) && isset($amount1)
         x = document.getElementById("range1").innerHTML;
         y = document.getElementById("range2").innerHTML;
         z = document.getElementById("range3").innerHTML;
-        sum = parseInt(x) + parseInt(y) + parseInt(z);
-        document.getElementById("demo").value = sum;
+        sum = parseInt(x) * parseInt(y) * parseInt(z);
+        document.getElementById("menge_warenkorb").value = sum;
+    }
+    function waehleSorte(newValue)
+    {
+        document.getElementById("sorte_warenkorb").value=newValue;
     }
 </script>
 
 
-
-<!--Warenkorb-->
-<div class="row">
-    <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
-        <h3>Warenkorb</h3>
-        <label for="demo">Menge (in l): </label>
-        <input type="text" id="demo"/>
-    </div>
-</div>
+<?php require_once("warenkorb.php");?>
 
 
-<?php require_once("footer.php")?>
+<?php require_once("footer.php");?>
