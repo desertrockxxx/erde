@@ -5,7 +5,7 @@
 <div class="row">
     <div class="warenkorb">
     <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="GET">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" name="form_warenkorb" method="GET">
             <h3>Warenkorb</h3>
             <div>
                 <label for="demo">Menge: </label>
